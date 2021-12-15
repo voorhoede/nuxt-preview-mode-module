@@ -15,6 +15,7 @@ interface Options {
 }
 
 const DEFAULT_OPTIONS = {
+  persistant: true,
   storageType: StorageType.localStorage,
 };
 

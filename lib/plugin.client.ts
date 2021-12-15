@@ -25,6 +25,7 @@ const plugin: Plugin = (
   inject
 ) => {
   const { preview, previewSecret, ...otherQueryParams } = query;
+  const persistant = JSON.parse('<%= options.persistant %>');
 
   // Feature check for Local Storage API
   // @see https://mathiasbynens.be/notes/localstorage-pattern
@@ -50,7 +51,7 @@ const plugin: Plugin = (
     exit: exitPreview,
   });
 
-  if (storage?.getItem(STORAGE_KEY)) {
+  if (persistant && storage?.getItem(STORAGE_KEY)) {
     const data = JSON.parse(storage.getItem(STORAGE_KEY));
 
     if (preview || previewSecret) {
@@ -79,14 +80,14 @@ const plugin: Plugin = (
   onReady(removePreviewQueryParams);
 
   function enterPreview (data = {}) {
-    if (storage) {
+    if (persistant && storage) {
       storage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
     enablePreview(data);
   }
 
   function exitPreview () {
-    if (storage) {
+    if (persistant && storage) {
       storage.removeItem(STORAGE_KEY);
     }
     window.location.reload();
