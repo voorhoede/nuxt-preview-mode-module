@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS = {
 
 const previewModeModule: Module<Options> = function getModule () {
   const options: Options = {
-    DEFAULT_OPTIONS,
+    ...DEFAULT_OPTIONS,
     ...this.options.previewMode,
   };
 
