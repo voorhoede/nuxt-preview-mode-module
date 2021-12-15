@@ -1,5 +1,5 @@
 import { NuxtConfig } from '@nuxt/types';
-import previewModeModule, { StorageType } from '../../lib/module';
+import previewModeModule from '../../lib/module';
 
 const config: NuxtConfig = {
   target: 'static',
@@ -8,12 +8,6 @@ const config: NuxtConfig = {
     '@nuxt/typescript-build',
     previewModeModule,
   ],
-
-  previewMode: {
-    previewSecret: 'my_secret',
-    persistant: true,
-    storageType: StorageType.localStorage,
-  },
 };
 
 export default config;
