@@ -12,7 +12,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/module.js",
+  "main": "lib/module.ts",
   "scripts": {
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
@@ -25,8 +25,6 @@
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
     "@nuxt/test-utils": "^0.2.2",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config": "latest",
@@ -38,7 +36,6 @@
     "eslint": "^8.4.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
-    "husky": "latest",
     "jest": "latest",
     "nuxt-edge": "latest",
     "playwright": "^1.17.1",
