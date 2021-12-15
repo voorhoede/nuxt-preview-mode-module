@@ -1,7 +1,7 @@
-import { Module } from "@nuxt/types";
-import { formatMessage } from "utils";
+import { Module } from '@nuxt/types';
+import { formatMessage } from 'utils';
 
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 enum StorageType {
   localStorage = 'localStorage',
@@ -15,10 +15,10 @@ interface Options {
 }
 
 const DEFAULT_OPTIONS = {
-  storageType: StorageType.localStorage
-}
+  storageType: StorageType.localStorage,
+};
 
-const module: Module<Options> = async function () {
+const module: Module<Options> = function getModule () {
   const options: Options = {
     DEFAULT_OPTIONS,
     ...this.options.previewMode,
@@ -34,8 +34,9 @@ const module: Module<Options> = async function () {
     options: {
       previewSecret: options.previewSecret,
     },
-  })
-}
+  });
+};
 
 export default module;
+// eslint-disable-next-line global-require
 export const meta = require('../package.json');

@@ -28,5 +28,13 @@ module.exports = {
     'no-shadow': 0,
     'no-use-before-define': 0,
     'import/extensions': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        args: 'all',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      },
+    ],
   },
 };

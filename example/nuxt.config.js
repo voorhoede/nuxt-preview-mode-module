@@ -6,6 +6,6 @@ module.exports = {
   srcDir: __dirname,
   modules: [
     // eslint-disable-next-line global-require
-    { handler: require('..') },
+    { handler: require('../lib/module') },
   ],
 };
