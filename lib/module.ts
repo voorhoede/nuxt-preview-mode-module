@@ -1,9 +1,9 @@
 import { Module } from '@nuxt/types';
-import { formatMessage } from 'utils';
+import { formatMessage } from './utils';
 
 const { resolve } = require('path');
 
-enum StorageType {
+export enum StorageType {
   localStorage = 'localStorage',
   sessionStorage = 'sessionStorage',
 }
@@ -18,7 +18,7 @@ const DEFAULT_OPTIONS = {
   storageType: StorageType.localStorage,
 };
 
-const module: Module<Options> = function getModule () {
+const previewModeModule: Module<Options> = function getModule () {
   const options: Options = {
     DEFAULT_OPTIONS,
     ...this.options.previewMode,
@@ -29,14 +29,11 @@ const module: Module<Options> = function getModule () {
   }
 
   this.addPlugin({
-    src: resolve(__dirname, 'plugin.js'),
-    fileName: '@voorhoede/nuxt-preview-mode-module.js',
-    options: {
-      previewSecret: options.previewSecret,
-    },
+    src: resolve(__dirname, 'plugin.client.ts'),
+    options,
   });
 };
 
-export default module;
+export default previewModeModule;
 // eslint-disable-next-line global-require
 export const meta = require('../package.json');

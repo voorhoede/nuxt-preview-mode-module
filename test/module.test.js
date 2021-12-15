@@ -1,18 +1,16 @@
-const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils');
+import { setupTest, createPage } from '@nuxt/test-utils';
 
 describe('module', () => {
-  let nuxt;
-
-  beforeAll(async () => {
-    ({ nuxt } = (await setup(loadConfig(__dirname, '../../example'))));
-  }, 60000);
-
-  afterAll(async () => {
-    await nuxt.close();
+  setupTest({
+    testDir: __dirname,
+    fixture: 'fixture',
+    configFile: 'nuxt.config.ts',
+    browser: true,
   });
 
   test('render', async () => {
-    const html = await get('/');
-    expect(html).toContain('Works!');
+    const page = await createPage('/');
+    const html = await page.innerHTML('body');
+    expect(html).toContain('Works');
   });
 });
