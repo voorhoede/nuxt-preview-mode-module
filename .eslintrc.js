@@ -36,5 +36,6 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    'import/prefer-default-export': 0,
   },
 };
