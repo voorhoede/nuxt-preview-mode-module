@@ -9,34 +9,25 @@
       "name": "Voorhoede"
     }
   ],
-  "main": "./dist/lib/module.js",
-  "types": "./types/d.ts",
+  "main": "./lib/module.js",
+  "types": "./types/index.d.ts",
   "files": [
-    "index.d.ts",
-    "lib",
     "types",
-    "dist"
+    "lib"
   ],
   "scripts": {
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
-    "prebuild": "rimraf dist",
-    "build": "tsc",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
-  "dependencies": {
-    "@nuxt/types": "^2.15.8"
-  },
   "devDependencies": {
     "@babel/core": "latest",
+    "@babel/eslint-parser": "^7.16.5",
     "@babel/preset-env": "latest",
     "@nuxt/test-utils": "^0.2.2",
-    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.7.0",
     "babel-eslint": "latest",
     "babel-jest": "latest",
     "eslint": "^8.4.1",
@@ -46,10 +37,7 @@
     "npm-run-all": "^4.1.5",
     "nuxt-edge": "latest",
     "playwright": "^1.17.1",
-    "rimraf": "^3.0.2",
-    "standard-version": "latest",
-    "ts-jest": "^27.1.1",
-    "typescript": "^4.5.4"
+    "standard-version": "latest"
   },
   "publishConfig": {
     "access": "public"

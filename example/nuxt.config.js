@@ -3,8 +3,7 @@ import { join } from 'path';
 export default {
   target: 'static',
   buildModules: [
-    '@nuxt/typescript-build',
-    join(__dirname, '../lib/module.ts'),
+    join(__dirname, '../lib/module.js'),
   ],
   previewMode: {
     previewSecret: 'secret',

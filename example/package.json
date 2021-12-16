@@ -7,8 +7,6 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/typescript-build": "^2.1.0",
-    "@types/node": "^16.11.12",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",

@@ -1,7 +1,6 @@
-import { NuxtConfig } from '@nuxt/types';
 import previewModeModule from '../../lib/module';
 
-const config: NuxtConfig = {
+export default {
   target: 'static',
 
   buildModules: [
@@ -9,5 +8,3 @@ const config: NuxtConfig = {
     previewModeModule,
   ],
 };
-
-export default config;

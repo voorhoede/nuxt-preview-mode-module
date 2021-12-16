@@ -10,12 +10,11 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 13,
-    parser: '@typescript-eslint/parser',
+    parser: '@babel/eslint-parser',
     sourceType: 'module',
   },
   plugins: [
     'vue',
-    '@typescript-eslint',
   ],
   rules: {
     semi: ['warn', 'always'],
@@ -28,14 +27,6 @@ module.exports = {
     'no-shadow': 0,
     'no-use-before-define': 0,
     'import/extensions': 0,
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        args: 'all',
-        argsIgnorePattern: '^_',
-        ignoreRestSiblings: true,
-      },
-    ],
     'import/prefer-default-export': 0,
     'vue/multi-word-component-names': 0,
   },

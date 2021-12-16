@@ -6,7 +6,7 @@ describe('module', () => {
   setupTest({
     testDir: __dirname,
     fixture: 'fixture',
-    configFile: 'nuxt.config.ts',
+    configFile: 'nuxt.config.js',
     browser: true,
     config: {
       previewMode: {
