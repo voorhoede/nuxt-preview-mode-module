@@ -1,6 +1,10 @@
 {
+  "include": [
+    "lib/*"
+  ],
   "compilerOptions": {
-    "baseUrl": "./lib",
+    "rootDir": ".",
+    "outDir": "dist",
   },
   "exclude": ["node_modules"]
 }

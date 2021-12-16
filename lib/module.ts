@@ -1,18 +1,9 @@
 import { Module } from '@nuxt/types';
+
+import { StorageType, Options } from '../index.d';
 import { formatMessage } from './utils';
 
 const { resolve } = require('path');
-
-export enum StorageType {
-  localStorage = 'localStorage',
-  sessionStorage = 'sessionStorage',
-}
-
-interface Options {
-  previewSecret: string,
-  persistant: boolean,
-  storageType: StorageType
-}
 
 const DEFAULT_OPTIONS = {
   persistant: true,
