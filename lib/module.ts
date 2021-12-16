@@ -3,8 +3,6 @@ import { Module } from '@nuxt/types';
 import { StorageType, Options } from '../index.d';
 import { formatMessage } from './utils';
 
-const { resolve } = require('path');
-
 const DEFAULT_OPTIONS = {
   persistant: true,
   storageType: StorageType.localStorage,
@@ -21,7 +19,10 @@ const previewModeModule: Module<Options> = function getModule () {
   }
 
   this.addPlugin({
-    src: resolve(__dirname, 'plugin.client.ts'),
+    // Nuxt module documentation uses path.resolve,
+    // But that would require including `.ts`,
+    // which isn't rewritten to `.js` in the typescript build.
+    src: require.resolve('./plugin.client'),
     options,
   });
 };
