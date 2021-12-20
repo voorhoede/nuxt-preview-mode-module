@@ -5,8 +5,9 @@ export enum StorageType {
 
 interface PreviewModeOptions {
   previewSecret: string,
-  persistant: boolean,
-  storageType: StorageType
+  persistant?: boolean,
+  storageType?: StorageType
+  storageKey?: string,
 }
 
 interface PreviewModePlugin {
