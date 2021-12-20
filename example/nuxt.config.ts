@@ -10,6 +10,7 @@ const config: NuxtConfig = {
   ],
   previewMode: {
     previewSecret: 'secret',
+    storageKey: 'preview-data',
   },
 };
 
