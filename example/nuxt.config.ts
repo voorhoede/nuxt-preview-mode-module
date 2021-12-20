@@ -6,7 +6,7 @@ const config: NuxtConfig = {
   target: 'static',
   buildModules: [
     '@nuxt/typescript-build',
-    join(__dirname, '../lib/module.js'),
+    '@voorhoede/nuxt-preview-mode-module',
   ],
   previewMode: {
     previewSecret: 'secret',

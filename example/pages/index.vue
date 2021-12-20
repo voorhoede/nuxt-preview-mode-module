@@ -1,20 +1,15 @@
 <template>
   <div>
+    <preview-mode-bar />
     <h1>Hello world</h1>
     <p>Preview enabled: {{ $nuxt.isPreview }}</p>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+import PreviewModeBar from '@voorhoede/nuxt-preview-mode-module/lib/components/PreviewModeBar.vue';
 
-export default Vue.extend({
-  mounted () {
-    this.$previewMode.enter();
-
-    setTimeout(() => {
-      this.$previewMode.exit();
-    }, 5000);
-  },
-});
+export default {
+  components: { PreviewModeBar },
+};
 </script>
