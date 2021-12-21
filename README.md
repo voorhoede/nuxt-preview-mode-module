@@ -6,9 +6,14 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Module enabling persistant preview mode for nuxt
+Extends Nuxt's built-in preview mode:
 
-[📖 **Release Notes**](./CHANGELOG.md)
+🚪 Enables preview mode through routing (?preview=true)
+🔒 Secures preview mode with a (client-side) secret (&secret=...)
+👉 Enables redirect when entering preview mode (&location=/...)
+🧠 Persists preview mode through routing & page refresh using storage
+🎛️ Provides programmatic way to enter() and exit() preview mode
+🍫 Provides <PreviewModeBar> component to display and control preview mode
 
 ## Setup
 
@@ -27,9 +32,94 @@ yarn add @voorhoede/nuxt-preview-mode-module # or npm install @voorhoede/nuxt-pr
     '@voorhoede/nuxt-preview-mode-module',
 
     // With options
-    ['@voorhoede/nuxt-preview-mode-module', { /* module options */ }]
+    ['@voorhoede/nuxt-preview-mode-module', {
+      previewSecret: 'mySecret'
+    }]
   ]
 }
+```
+
+## Options
+
+You can pass different options using the axios property in your nuxt.config.js:
+
+```js
+export default {
+  previewMode: {
+    // Preview mode options go here
+  },
+}
+```
+
+### `previewSecret`
+
+* Required: `true`
+
+String to match `previewSecret` query parameter to.
+
+### `persistant`
+
+* Default: `true`
+
+Boolean defining whether to persist preview mode, using local storage (or session storage).
+
+### `storageType`
+
+* Default: `localStorage`
+* Can be either `localStorage` or `sessionStorage`
+
+### `storageKey`
+
+* Default: `nuxt-datocms-preview-data`
+* String setting the storage key for persisting preview data in localstorage or session storage.
+
+## Components
+
+There's some customizable components you can use:
+
+### PreviewModeBar
+
+Component rendering showing the user preview mode is enabled, with a button to disable.
+
+```vue
+<template>
+  <div>
+    <!-- Default preview bar -->
+    <preview-mode-bar />
+    <!-- Customized preview bar, through slots -->
+    <preview-mode-bar>
+      Preview mode: enabled.
+      <preview-mode-exit-button>Exit</preview-mode-exit-button>
+    </preview>
+  </div>
+</template>
+
+<script>
+import PreviewModeBar from '@voorhoede/nuxt-preview-mode-module/lib/components/PreviewModeBar.vue';
+import PreviewModeExitButton from '@voorhoede/nuxt-preview-mode-module/lib/components/PreviewModeExitButton.vue';
+
+export default {
+  components: { PreviewModeBar },
+};
+</script>
+```
+
+### PreviewModeExitButton
+
+Component to disable preview mode.
+
+```vue
+<template>
+  <preview-mode-exit-button>Exit</preview-mode-exit-button>
+</template>
+
+<script>
+import PreviewModeExitButton from '@voorhoede/nuxt-preview-mode-module/lib/components/PreviewModeExitButton.vue';
+
+export default {
+  components: { PreviewModeExitButton },
+};
+</script>
 ```
 
 ## Development
