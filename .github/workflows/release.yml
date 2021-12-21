@@ -3,7 +3,7 @@ on:
     tags: v*.*.*
 
 jobs:
-  npm release:
+  npm-release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
