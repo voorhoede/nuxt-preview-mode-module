@@ -41,7 +41,7 @@ yarn add @voorhoede/nuxt-preview-mode-module # or npm install @voorhoede/nuxt-pr
 
 ## Options
 
-You can pass different options using the axios property in your nuxt.config.js:
+You can pass different options using the `previewMode` property in your `nuxt.config.js`:
 
 ```js
 export default {
