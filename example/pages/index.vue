@@ -38,5 +38,3 @@ export default {
   components: { PreviewModeBar, PreviewModeExitButton },
 };
 </script>
-
-    PreviewModeExitButton
