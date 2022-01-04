@@ -56,7 +56,7 @@ export default {
 
 String to match `previewSecret` query parameter to.
 
-### `persistant`
+### `persistent`
 
 * Default: `true`
 

@@ -1,4 +1,4 @@
-export enum StorageType {
+persistentexport enum StorageType {
   localStorage = 'localStorage',
   sessionStorage = 'sessionStorage',
 }
