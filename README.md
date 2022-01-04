@@ -140,8 +140,8 @@ Copyright (c) Voorhoede
 [npm-downloads-src]: https://img.shields.io/npm/dt/@voorhoede/nuxt-preview-mode-module.svg
 [npm-downloads-href]: https://npmjs.com/package/@voorhoede/nuxt-preview-mode-module
 
-[github-actions-ci-src]: https://github.com/git@github.com:voorhoede/nuxt-preview-mode-module.git/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/git@github.com:voorhoede/nuxt-preview-mode-module.git/actions?query=workflow%3Aci
+[github-actions-ci-src]: https://github.com/voorhoede/nuxt-preview-mode-module/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/voorhoede/nuxt-preview-mode-module/actions?query=workflow%3Aci
 
 [codecov-src]: https://img.shields.io/codecov/c/github/git@github.com:voorhoede/nuxt-preview-mode-module.git.svg
 [codecov-href]: https://codecov.io/gh/git@github.com:voorhoede/nuxt-preview-mode-module.git
