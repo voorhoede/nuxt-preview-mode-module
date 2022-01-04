@@ -1,11 +1,11 @@
-persistentexport enum StorageType {
+export enum StorageType {
   localStorage = 'localStorage',
   sessionStorage = 'sessionStorage',
 }
 
 interface PreviewModeOptions {
   previewSecret: string,
-  persistant?: boolean,
+  persistent?: boolean,
   storageType?: StorageType
   storageKey?: string,
 }
