@@ -98,7 +98,7 @@ import PreviewModeBar from '@voorhoede/nuxt-preview-mode-module/lib/components/P
 import PreviewModeExitButton from '@voorhoede/nuxt-preview-mode-module/lib/components/PreviewModeExitButton.vue';
 
 export default {
-  components: { PreviewModeBar },
+  components: { PreviewModeBar, PreviewModeExitButton },
 };
 </script>
 ```
