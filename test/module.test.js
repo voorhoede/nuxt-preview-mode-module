@@ -7,16 +7,9 @@ const previewSecret = 'secret';
 describe('module', () => {
   describe('Plugin options', () => {
     it('Throws when previewSecret is not defined', () => {
-      const nuxtScope = {
-        options: {
-          previewMode: {
-            previewSecret: undefined,
-          },
-        },
-      };
-      const scopedModule = module.bind(nuxtScope);
-
-      expect(() => scopedModule()).toThrow();
+      expect(() => module({
+        previewSecret: undefined,
+      })).toThrow();
     });
 
     const options = {
