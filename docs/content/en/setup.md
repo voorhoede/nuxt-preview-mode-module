@@ -31,13 +31,34 @@ Add `@voorhoede/nuxt-preview-mode-module` dependency to your project:
 Then, add `@voorhoede/nuxt-preview-mode-module` to the `modules` section of `nuxt.config.js`:
 
 ```js[nuxt.config.js]
-{
+export default {
   modules: [
     '@voorhoede/nuxt-preview-mode-module'
   ],
   previewMode: {
-    // Options
+    // preview secret is required and has no default:
+    previewSecret: 'add your own secret here',
+    // other options with their default values:
+    persistent: true,
+    storageType: 'localStorage',
+    storageKey: 'nuxt-datocms-preview-data',
   }
+}
+```
+
+or using shorthand options:
+```js[nuxt.config.js]
+export default {
+  modules: [
+    ['@voorhoede/nuxt-preview-mode-module', {
+      // preview secret is required and has no default:
+      previewSecret: 'add your own secret here',
+      // other options with their default values:
+      persistent: true,
+      storageType: 'localStorage',
+      storageKey: 'nuxt-datocms-preview-data',
+    }]
+  ],
 }
 ```
 
