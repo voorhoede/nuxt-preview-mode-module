@@ -1,6 +1,6 @@
 {
   "name": "@voorhoede/nuxt-preview-mode-module",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Module enabling persistent preview mode for nuxt",
   "repository": "git@github.com:voorhoede/nuxt-preview-mode-module.git",
   "license": "MIT",
