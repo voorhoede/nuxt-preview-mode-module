@@ -33,9 +33,7 @@ https://mydomain.com?preview=true&previewSecret=mysecret
 
 Use your `previewSecret` set in [options](/setup#previewsecret).
 
-## Exiting by components
-
-Exit preview mode using `<PreviewModeExitButton>`:
+## Exit preview mode using `<PreviewModeExitButton>`
 
 ```vue
 <template>
@@ -53,9 +51,7 @@ Exit preview mode using `<PreviewModeExitButton>`:
 </script>
 ```
 
-## Other components
-
-### `<PreviewModeBar>`
+## `<PreviewModeBar>`
 
 The module comes with a component shown when preview mode is enabled:
 
