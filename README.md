@@ -17,6 +17,10 @@ Extends Nuxt's built-in preview mode.
 * 🎛️ Provides programmatic way to enter() and exit() preview mode
 * 🍫 Provides <PreviewModeBar> component to display and control preview mode
 
+## Maintenance
+
+This module is developed by [De Voorhoede](https://www.voorhoede.nl). We will continue to maintain this module as long as we use this in our projects. Feel free to use and fork this module. We will only handle issues or accept pull requests if they aid our projects.
+
 ## Development
 
 1. Clone this repository
