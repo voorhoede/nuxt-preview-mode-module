@@ -1,30 +1,82 @@
 /* eslint-disable import/no-import-module-exports */
-import { setupTest, createPage } from '@nuxt/test-utils';
+import { setupTest, createPage, expectModuleToBeCalledWith } from '@nuxt/test-utils';
 import module from '../lib/module';
 
 const previewSecret = 'secret';
 
 describe('module', () => {
-  it('Throws when previewSecret is not defined', () => {
-    const nuxtScope = {
-      options: {
-        previewMode: {
-          previewSecret: undefined,
+  describe('Plugin options', () => {
+    it('Throws when previewSecret is not defined', () => {
+      const nuxtScope = {
+        options: {
+          previewMode: {
+            previewSecret: undefined,
+          },
         },
-      },
-    };
-    const scopedModule = module.bind(nuxtScope);
+      };
+      const scopedModule = module.bind(nuxtScope);
 
-    expect(() => scopedModule()).toThrow();
+      expect(() => scopedModule()).toThrow();
+    });
+
+    const options = {
+      previewSecret: 'secret',
+      persistent: true,
+      storageType: 'sessionStorage',
+      storageKey: 'myStorageKey',
+    };
+
+    describe('Using options shorthand', () => {
+      setupTest({
+        testDir: __dirname,
+        fixture: 'fixture',
+        browser: true,
+        config: {
+          modules: [
+            [module, options],
+          ],
+        },
+      });
+
+      it('Options are passed to plugin', () => {
+        expectModuleToBeCalledWith('addPlugin', {
+          src: expect.stringContaining('plugin.client.js'),
+          options,
+        });
+      });
+    });
+
+    describe('Using `previewMode` object in options', () => {
+      setupTest({
+        testDir: __dirname,
+        fixture: 'fixture',
+        browser: true,
+        config: {
+          modules: [
+            module,
+          ],
+          previewMode: options,
+        },
+      });
+
+      it('Options are passed to plugin', () => {
+        expectModuleToBeCalledWith('addPlugin', {
+          src: expect.stringContaining('plugin.client.js'),
+          options,
+        });
+      });
+    });
   });
 
   describe('Browser tests', () => {
     setupTest({
       testDir: __dirname,
       fixture: 'fixture',
-      configFile: 'nuxt.config.js',
       browser: true,
       config: {
+        modules: [
+          module,
+        ],
         previewMode: {
           previewSecret,
         },
