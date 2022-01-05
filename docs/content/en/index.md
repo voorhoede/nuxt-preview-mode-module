@@ -5,7 +5,7 @@ position: 1
 category: ''
 features:
   - 🚪 Enables preview mode through routing (?preview=true)
-  - 🔒 Secures preview mode with a (client-side) secret (&secret=...)
+  - 🔒 Secures preview mode with a (client-side) secret (&previewSecret=...)
   - 🧠 Persists preview mode through routing & page refresh using storage
   - 🎛️ Provides programmatic way to enter() and exit() preview mode
   - 🍫 Provides <PreviewModeBar> component to display and control preview mode
