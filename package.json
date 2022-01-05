@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
-    "test": "yarn lint && jest"
+    "test": "yarn lint && jest",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@babel/core": "latest",
@@ -35,7 +36,8 @@
     "jest": "latest",
     "npm-run-all": "^4.1.5",
     "nuxt-edge": "latest",
-    "playwright": "^1.17.1"
+    "playwright": "^1.17.1",
+    "standard-version": "^9.3.2"
   },
   "publishConfig": {
     "access": "public"
