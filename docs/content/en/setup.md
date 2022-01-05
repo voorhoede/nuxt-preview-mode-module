@@ -49,7 +49,7 @@ Then, add `@voorhoede/nuxt-preview-mode-module` to the `modules` section of `nux
 
 String to match `previewSecret` query parameter to.
 
-### `persistant`
+### `persistent`
 
 * Default: `true`
 
