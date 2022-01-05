@@ -1,7 +1,7 @@
 <template>
   <client-only v-if="$nuxt.isPreview">
     <slot>
-      <div>
+      <div class="bar">
         <p>You're currently in preview mode</p>
         <preview-mode-exit-button />
       </div>
@@ -18,3 +18,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.bar {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+p {
+  margin: 0;
+}
+</style>
