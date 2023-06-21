@@ -5,7 +5,8 @@
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![License][license-src]][license-href]
 
-Extends Nuxt's built-in preview mode.
+Extends Nuxt's built-in preview mode.  
+This module only works with Nuxt 2 since at the time of writing this Nuxt 3 does not have a preview mode.
 
 * [📖 Documentation](https://nuxt-preview-mode-module.netlify.app/)
 
